@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feliz Aniversário, Minha Preta 💖</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  /* Fundo aplicado no html e body */
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: url("./imagem/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:28px 16px;
+    position:relative;
+  }
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background: rgba(0,0,0,0.45);
+    z-index:-1;
+  }
+
+  h1{
+    font-family:'Great Vibes', cursive;
+    font-size:2.8rem;
+    color: #fff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+    margin-bottom:22px;
+    text-align:center;
+  }
+
+  .wrap{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap;
+    max-width:1000px;
+    width:100%;
+  }
+
+  .left-col, .right-col{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:center;
+    flex:1;
+  }
+
+  /* Carrossel */
+  .carrossel-container{
+    width:280px; height:460px;
+    border-radius:16px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 12px 30px rgba(0,0,0,0.45);
+  }
+  .carrossel{
+    height:100%;
+    display:flex;
+    transition: transform 900ms ease;
+  }
+  .carrossel img{
+    width:280px; height:460px; object-fit:cover; flex-shrink:0;
+  }
+  .indicadores{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:8px}
+  .indicador{
+    width:11px;height:11px;border-radius:50%;background:#ddd;transition:0.2s;
+  }
+  .indicador.ativo{background:#ffb703;transform:scale(1.2)}
+
+  /* Cards */
+  .card{
+    background: rgba(255,255,255,0.92);
+    border-radius:14px;
+    padding:14px 16px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.28);
+    max-width:380px;
+    width:100%;
+  }
+
+  .contador-label{font-weight:700;color:#ffb703;margin-bottom:6px;text-align:center}
+  .contador{
+    font-family: 'Courier New', monospace;
+    font-weight:700;
+    font-size:1.35rem;
+    display:inline-block;
+    padding:10px 16px;border-radius:10px;
+    background: linear-gradient(135deg,#ffb703,#ffd166);
+    color:#fff;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  .qr-titulo{font-family:'Poppins',sans-serif;font-weight:600;color:#ffb703;font-size:1.3rem;margin-bottom:8px;text-align:center}
+  .qr-img{width:72%;border-radius:10px;display:block;margin:0 auto}
+
+  .texto-romantico{
+  font-family:'Poppins', sans-serif;
+  color:#222;
+  font-size:1rem;         /* levemente menor */
+  line-height:1.4;        /* antes estava 1.6 */
+  text-align:justify;
+  border-left:4px solid #ffb703;
+  padding:10px 12px;      /* menos espaço interno */
+  background:rgba(255,255,255,0.97);
+  border-radius:8px;
+}
+
+  .video-card h2{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    color:#ffb703;
+    margin-bottom:12px;
+    text-align:center;
+  }
+  .video-card video{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  @media (max-width:880px){
+    .wrap{flex-direction:column;align-items:center}
+    .card{max-width:92%}
+  }
+</style>
+</head>
+<body>
+  <h1>Feliz Aniversário, Minha Preta 💖</h1>
+
+  <div class="wrap">
+    <!-- Coluna esquerda -->
+    <div class="left-col">
+      <div class="carrossel-container">
+        <div class="carrossel" id="carrossel">
+          <img src="imagem/imagem8.jpg" alt="Foto 1">
+          <img src="imagem/foto2.jpg" alt="Foto 2">
+          <img src="imagem/foto3.jpg" alt="Foto 3">
+          <img src="imagem/foto4.jpg" alt="Foto 4">
+          <img src="imagem/foto5.jpg" alt="Foto 5">
+          <img src="imagem/foto6.jpg" alt="Foto 6">
+          <img src="imagem/foto7.jpg" alt="Foto 7">
+        </div>
+      </div>
+      <div class="indicadores" id="indicadores">
+        <div class="indicador ativo"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+        <div class="indicador"></div>
+      </div>
+
+      <!-- Vídeos -->
+      <div class="card video-card">
+        <h2>TE AMO! 😍</h2>
+        <video src="video broto.mp4" autoplay loop muted playsinline></video>
+        <video src="video 2.mp4" autoplay loop muted playsinline></video>
+      </div>
+    </div>
+
+    <!-- Coluna direita -->
+    <div class="right-col">
+      <div class="card">
+        <div class="contador-label">Te amo há</div>
+        <div style="text-align:center"><span class="contador" id="contador">0 dias 0h 0m 0s</span></div>
+      </div>
+
+      <div class="card">
+        <p class="qr-titulo">Nossa música </p>
+        <a href="https://open.spotify.com/track/62yC4Y5JyMKwh2AKcYCSeB" target="_blank">
+          <img src="imagem/qrcode-swag.png" alt="QR Code" class="qr-img">
+        </a>
+        <iframe style="border-radius:12px;margin-top:10px;border:0" 
+          src="https://open.spotify.com/embed/track/62yC4Y5JyMKwh2AKcYCSeB" 
+          width="100%" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+        <!-- Música local -->
+        <audio id="bg-music" src="musica.mp3" autoplay loop></audio>
+      </div>
+
+      <div class="card texto-romantico">
+        Amor da minha vida ❤️<br><br>
+        Feliz aniversário, minha princesa! Hoje é o seu dia, mas me sinto o mais presenteado por ter você na minha vida. ❤️ Cada momento ao seu lado é único e precioso, e te amo mais do que palavras podem expressar. 💖 Que seu dia seja tão lindo e cheio de alegria quanto você faz os meus todos os dias! 🥰
+      </div>
+    </div>
+  </div>
+
+<script>
+  const carrossel = document.getElementById('carrossel');
+  const indicadores = document.querySelectorAll('.indicador');
+  const totalFotos = 7;
+  const larguraFoto = 280;
+  let indiceAtual = 0;
+
+  function avancarCarrossel() {
+    indiceAtual = (indiceAtual + 1) % totalFotos;
+    carrossel.style.transform = `translateX(${-indiceAtual * larguraFoto}px)`;
+    atualizarIndicadores();
+  }
+  function atualizarIndicadores() {
+    indicadores.forEach((el, i) => {
+      el.classList.toggle('ativo', i === indiceAtual);
+    });
+  }
+  setInterval(avancarCarrossel, 3000);
+
+  // Contador
+  const contador = document.getElementById('contador');
+  const dataInicio = new Date(2025, 6, 5, 14, 30, 0); // ajuste a data aqui
+  function atualizarContador() {
+    const agora = new Date();
+    let diff = agora - dataInicio;
+    if (diff < 0) {
+      contador.textContent = "Ainda não começou 💕";
+      return;
+    }
+    const segs = Math.floor(diff / 1000) % 60;
+    const mins = Math.floor(diff / (1000 * 60)) % 60;
+    const horas = Math.floor(diff / (1000 * 60 * 60)) % 24;
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    contador.textContent = `${dias} dias ${horas}h ${mins}m ${segs}s`;
+  }
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+</script>
+</body>
+</html>
